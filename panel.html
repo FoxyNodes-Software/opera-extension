@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>FoxyNodes</title>
+  </head>
+  <body onload="setTimeout(() => {showCA()}, 1000);">
+    <div class="splash">
+      <img src="./128x128.png">
+    </div>
+    <div class="header">
+      <button style="background-color: #455666;" onclick="showCP()" id="client-area"><img src="./user-light.svg"></button>
+      <button id="server-panel"><img src="./server-light.svg"></button>
+      <span id="blank"></span>
+      <button id="settings" style="margin-left: -2px;"><img src="./sliders-simple-light.svg"></button>
+    </div>
+    <div class="main-view">
+      <iframe id="client-area" src="https://foxynodes.com/dashboard" allowfullscreen></iframe>
+      <iframe style="display: none;" id="server-panel" src="https://panel.foxynodes.com" allowfullscreen></iframe>
+    </div>
+  </body>
+  <script src="./tab.js"></script>
+</html>
+
+<style>
+.header {
+    background: #384552;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    cursor: default;
+    display: grid;
+    grid-template-columns: 40px 40px auto 40px;
+}
+.header button {
+    border-radius: 50px;
+    border: none;
+    aspect-ratio: 1/ 1;
+    width: 32px;
+    height: 32px;
+    margin: 10px 0px 10px 10px;
+    background: transparent;
+    cursor: pointer;
+}
+.header img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: invert(1);
+    transform: scale(0.7);
+}
+
+.main-view {
+    position: fixed;
+    top: 52px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 52px);
+}
+.main-view iframe {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.splash {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #384552;
+    z-index: 10;
+    transition: 1s opacity;
+    pointer-events: none;
+    opacity: 0;
+    animation: 2.1s splash ease-in-out;
+}
+
+.splash img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes splash {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+</style>

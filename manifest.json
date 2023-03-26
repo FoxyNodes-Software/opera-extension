@@ -1,0 +1,25 @@
+{
+    "name": "FoxyNodes",
+    "author": "Rian",
+    "service_worker": {
+       "scripts": [ "background.js", "tab.js" ]
+    },
+    "description": "FoxyNodes, in your Opera sidebar.",
+    "icons": {
+       "128": "128x128.png",
+       "48": "48x48.png"
+    },
+    "manifest_version": 3,
+    "host_permissions": [ "webRequest", "webRequestBlocking", "\u003Call_urls>", "contextMenus", "scripting" ],
+    "version": "1.0.0",
+    "sidebar_action": {
+        "default_icon": {
+            "16": "16x16.png",
+            "48": "48x48.png",
+            "128": "128x128.png"
+        },
+        "default_title": "FoxyNodes",
+        "default_panel": "panel.html"
+    }
+}
+ 
