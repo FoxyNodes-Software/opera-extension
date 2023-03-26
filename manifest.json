@@ -2,7 +2,7 @@
     "name": "FoxyNodes",
     "author": "Rian",
     "service_worker": {
-       "scripts": [ "background.js", "tab.js" ]
+       "scripts": [ "background.js", "tab.js", "content.js" ]
     },
     "description": "FoxyNodes, in your Opera sidebar.",
     "icons": {
@@ -10,7 +10,7 @@
        "48": "48x48.png"
     },
     "manifest_version": 3,
-    "host_permissions": [ "webRequest", "webRequestBlocking", "\u003Call_urls>", "contextMenus", "scripting" ],
+    "host_permissions": [ "webRequest", "webRequestBlocking", "\u003Call_urls>", "contextMenus", "scripting", "activeTab" ],
     "version": "1.0.0",
     "sidebar_action": {
         "default_icon": {
