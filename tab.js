@@ -10,7 +10,17 @@ function showCA() {
 
 function showSP() {
     document.querySelector('iframe#client-area').style.display = 'none';
-    document.querySelector('iframe#server-panel').style.display = 'inherit';
     document.querySelector('button#client-area').style.backgroundColor = 'transparent'
-    document.querySelector('button#server-panel').style.backgroundColor = '#455666'
+
+    chrome.runtime.sendMessage({action: 'checkPanelLogin'}, function(response) {
+        if (response.loggedIn) {
+            document.querySelector('iframe#server-panel').style.display = 'inherit';
+            document.querySelector('button#server-panel').style.backgroundColor = '#455666'
+            console.log('logged in')
+        } else {
+          chrome.tabs.create({url: "https://panel.foxynodes.com/auth/login"});
+          console.log("not logged in")
+        }
+      });
+      
 }
